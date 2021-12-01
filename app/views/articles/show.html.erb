@@ -1,22 +1,15 @@
 <div class="container">
-  <h1 class="title"><%= @article.title %></h1>
-
-  <p><%= @article.body %></p>
+  <h1 class="title">
+    <%= @article.title %>
+  </h1>
+  <p>
+    <%= @article.body %>
+  </p>
 
   <% if @article.comments.size > 0 %>
     <hr />
     <h2>Comments</h2>
-    <% @article.comments.each do |comment| %>
-      <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter %>
-      </p>
-
-      <p>
-        <strong>Comment:</strong>
-        <%= comment.body %>
-      </p>
-    <% end %>
+    <%= render @article.comments %>
   <% end %>
 
   <hr />
